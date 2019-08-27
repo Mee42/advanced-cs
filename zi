@@ -1,0 +1,4 @@
+mkdir -p zips
+cd $1
+IIII=$(echo $1 | sed 's/\///g')
+zip ../zips/$IIII-carson.zip *
