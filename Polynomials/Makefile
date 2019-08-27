@@ -1,5 +1,5 @@
 #this is stuff that is per-project
-MAIN_FILE_NAME = ""
+MAIN_FILE_NAME = "Main"
 
 
 

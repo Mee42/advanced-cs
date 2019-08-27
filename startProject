@@ -1,0 +1,2 @@
+mkdir $1
+cp Base.Makefile $1/Makefile
