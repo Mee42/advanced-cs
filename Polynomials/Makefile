@@ -16,7 +16,7 @@ CLASS_FILES    := $(SOURCE_FILES:.java=.class)
 	
 
 %.class: %.java
-	javac -g $<
+	javac -g $(SOURCE_FILES)
 
 run: $(CLASS_FILES)
 	java $(MAIN_FILE_NAME)

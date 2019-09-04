@@ -24,7 +24,7 @@ Other languages like C++ and Kotlin would allow you to overload operators like +
 
 val ten = new RationalNum(5,1) + new RationalNum(10,2)
 
-perfectly valid and apprieciated.
+perfectly valid and very nice and neat.
 
 
 
@@ -42,7 +42,7 @@ public class RationalNum {
 	//Post: sets instance variables
    public RationalNum(int num, int denom) {
       //simplifies the num and denom so that all RationalNum instances are always
-      //simified	   
+      //simified THIS IS ONLY POSSIBLE BECAUSE RATIONAL NUM IS IMMUTABLE	   
       for(int i = Math.min(num,denom);i >= 2;i--){
 	     while (num % i == 0 && denom % i == 0){
 		     num = num / i;
@@ -57,7 +57,7 @@ public class RationalNum {
 	//copy constructor
 	//Pre: copy is not null
 	//Post: creates a copy of copy param
-   public RationalNum(RationalNum copy) 
+   public RationalNum(RationalNum copy) // useless with imutable objects
    {
       this.num = copy.num;
       this.denom = copy.denom;
