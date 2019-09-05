@@ -6,7 +6,7 @@ public class Main {
       Poly p1 = new ArrayBasedPoly(c);  // 4x^3 + 3x^2 + 1
       System.out.println("p1(x) =     " + p1);
    
-      Polywnomial p2 = new ArrayBasedPoly(c1);   // - 5x – 2
+      Poly p2 = new ArrayBasedPoly(c1);   // - 5x – 2
       System.out.println("p2(x) =     " + p2);                 // p2(x) = - 5x^1 – 2
    
       Poly p3   = new ArrayBasedPoly (-4,1);  // coeff = -4, exp = 1
@@ -26,3 +26,14 @@ public class Main {
       System.out.println ("p5(1) = " + p5.evaluate(1));
       }
 }
+
+/*
+p1(x) =     4.0x^3 + 3.0x^2 + 1.0
+p2(x) =     -5.0x + -2.0
+p3(x) =     -4.0x
+p(x) =     4.0x^3 + 3.0x^2 + -10.0x + -3.0
+p4(x) =     4.0x^3 + 3.0x^2 + -6.0x + -3.0
+p5(x) =     12.0x^2 + 6.0x + -6.0
+p5(0) = -6.0
+p5(1) = 12.0
+ */
