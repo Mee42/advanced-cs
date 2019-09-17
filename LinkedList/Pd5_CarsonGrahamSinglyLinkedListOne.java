@@ -25,6 +25,9 @@ import java.util.Scanner;
 //
 // It's better OOP as well because it can encapsulate the nodes and extend the List interface  
 class LinkedListOne {
+	// node class has non-private members because set and get methods
+	// are unnessessary and add overhead to the function. It also makes it more readable,
+	// in my opinion
 	static class Node<T> {
 		Node<T> next;
 		T value;
@@ -36,6 +39,7 @@ class LinkedListOne {
 			this(null,value);
 		}
 	}
+	// null is considered an empty list >.>
 	public static <T> Node<T> add(Node<T> head, T element){
 		//insert at the end of the list
 		if(head == null){
@@ -85,7 +89,9 @@ class LinkedListOne {
 		if(head == null)
 			return null;
 		return head.next;
+	
 	}
+	// don't use remove(size(head),head) because that would interate twice
 	public static <T> Node<T> removeLast(Node<T> head){
 		Node<T> last = head;
 		if(last == null){
@@ -100,7 +106,7 @@ class LinkedListOne {
 		last.next = null;
 		return head;
 	}
-
+	// traverse using a trailing head
 	public static <T> Node<T> reverse(Node<T> head){
 		Node<T> newHead = null;
 		Node<T> pointer = head;
@@ -110,6 +116,7 @@ class LinkedListOne {
 		}
 		return newHead;
 	}
+	//
 	public static <T> Node<T> rotate(Node<T> head){
 		if(head == null)
 			return null;
@@ -122,6 +129,12 @@ class LinkedListOne {
 		head.next = null;
 		return secondToLast;
 	}
+	// interate through the array with two interators
+	// the second one iterates one element and the first interates 2 elements at a time
+	// when the first reatches the ned
+	// the second is in the middle
+	//
+	// yay!
 	public static <T> Node<T> middleNode(Node<T> head){
 		Node<T> trailing = head;
 		while(head != null && head.next != null){
@@ -131,6 +144,8 @@ class LinkedListOne {
 		return trailing;
 
 	}
+	// uses tho middleNode method to make better code.
+	//
 	public static <T> Node<T> split(Node<T> head){
 		if(head == null){
 			printLinkedList(null);
@@ -154,8 +169,14 @@ class LinkedListOne {
 
 
 
+	// Scanner is a horrible class;
+	// It automaticly closes the input stream when you close the scanner
+	// this means that you have two options
+	// - create a single static scanner from a single static input source (System.in)
+   	// or
+	// - never close a scanner object (bad!)
+	static Scanner input = new Scanner(System.in);
 
-   	static Scanner input = new Scanner(System.in);
 
     	public static char menu() {
 		System.out.println("\n====> What would you like to do?");
