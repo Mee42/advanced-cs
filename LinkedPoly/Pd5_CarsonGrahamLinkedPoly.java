@@ -10,7 +10,7 @@ import java.util.Objects;
  * on some methods from O(n) to O(n^2), but in O(n^2) method I rewrote it
  * to avoid O(n^3) code
  */
-public class LinkedPoly implements Poly {
+class LinkedPoly implements Poly {
 
 	private static class Node {
 
