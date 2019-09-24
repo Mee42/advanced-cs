@@ -1,5 +1,7 @@
 public class Main {
 	public static void main(String[] args){
+	    // included old main method
+        //   why not
       double [] c = {1, 0, 3, 4};
       double [] c1 = {-2, -5};
    
@@ -26,7 +28,8 @@ public class Main {
       System.out.println ("p5(1) = " + p5.evaluate(1));
       secondMain();
   }
-  static void secondMain(){
+  private static void secondMain(){
+    System.out.println("    -----    secondMain    ----    ");
           double[] arr = {4,3,3,2,1,0};
           Poly p1 = new LinkedPoly(arr);  // 4x^3 + 3x^2 + 1
           System.out.println("p1(x) =     " + p1);
@@ -52,13 +55,14 @@ public class Main {
           Poly clone = new LinkedPoly((LinkedPoly)p5);
           System.out.println("clone(x) =     " + clone);
           System.out.println("p5 and clone are the same: " + p5.equals(clone));
-                                                                                                                            
+
+          @SuppressWarnings("unused")
           Poly clone2 = p5;
           System.out.println("clone2(x) =    " + clone2);
           System.out.println("p5 and clone 2 are the same: " + p5.equals(clone2));
           Poly product = p1.multiply (p2);
           System.out.println("product of p1(x) and p2(x) is     " + product);
-          System.out.println ("p5(0) = " + p5.evaluate(0));
-          System.out.println ("p5(1) = " + p5.evaluate(1));
+          System.out.println ("p5(0) = " + p5.evaluate(0)); // 4
+          System.out.println ("p5(1) = " + p5.evaluate(1)); // 12
   }
 }
