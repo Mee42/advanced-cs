@@ -14,10 +14,10 @@
  * This wasn't a huge problem as the internet exists.
  *
  *
- * EDIT: I adopted this interface for the Sll-2 lab
+ * EDIT: I adopted this interface for the Sll-2 lab, and added the multiply(Poly other) method.
  */
 
-public interface Poly {
+interface Poly {
     int getDegree();
     double getCoeff(int exponent);
     double evaluate(double x);
