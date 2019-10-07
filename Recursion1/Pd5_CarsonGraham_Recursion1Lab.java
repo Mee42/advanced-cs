@@ -44,25 +44,20 @@ class RecursionLab{
       return x > 0 && MASK % x == 0;
    }
 	//Pre: none - Post: returns String of x reversed
-  public static String reverse(String x){
-      // STRING MANIPULATION SHOULD BE DONE ON STRINGS
-      // LONGS ARE NOT IN BASE-10 AND SHOULD NOT BE TREATED AS SUCH
-      // literally if you are writing a method to do string manipulation
-      // have it take in a string.
-      //
-      // here's your... O(n^2)? method? the amount of string concatination is abhorrent
-      if(x.length() < 2)
-        return x;// handle "" and "1"
-      return x.charAt(x.length()-1) + reverse(x.substring(1,x.length()-1)) + x.charAt(0);
+  public static String reverse(long x){
+      if(x < 10) return "" + x;
+      return x % 10 + reverse(x/10);
    }
 
-	//Pre: x > 0 - Post: Prints x in base 5
-   public static void base5(int x)
-   {
+	//Pre: x > 0 - Post: returns x in base 5
+   public static String base5(int x){
+     if(x < 5) return "" + x;
+     return base5(x/5) + x%5;
    }
-	// Pre: x > 0 - Post: Prints x with commas
-   public static void printWithCommas(long x)
-   {
+	// Pre: x > 0 - Post: returns x with commas
+   public static String printWithCommas(long x){
+     if(x < 1000) return "" + x;
+     return printWithCommas(x / 1000) + "," + x % 1000;
    }
 	
 	
@@ -102,14 +97,14 @@ class RecursionLab{
          else if (choice == 4)
          {
             System.out.println("Enter a number");
-            System.out.println(reverse("" + scan.nextLong()));
+            System.out.println(reverse(scan.nextLong()));
          }
          else if (choice == 5)
          {
             System.out.println("Enter a number");
             int number = scan.nextInt();
             if (number > 0)
-               base5(number);
+               System.out.println(base5(number));
             else
                System.out.println("That number is not valid");
          }
@@ -118,7 +113,7 @@ class RecursionLab{
             System.out.println("Enter a number");
             int number = scan.nextInt();
             if (number > 0)
-               printWithCommas(number);
+               System.out.println(printWithCommas(number));
             else
                System.out.println("That number is not valid");
          }
