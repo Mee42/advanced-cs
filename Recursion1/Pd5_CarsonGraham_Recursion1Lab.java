@@ -17,33 +17,24 @@ class RecursionLab{
       return 0;
    }
 
-   // given a number K
-   // the only divisers of (3^K) are (3^(K-1)) and so on
-   // so if we find the biggest K possible
-   //   (which is calculatable by floor(log3(MAX_INT)))
-   // then we can do this in O(1)
-   //
-   // 3 is a prime number. For any *set* of primes, their product is unique.
-   //
-   // Any power of 3 will factor out to only 3's, where as any other number will
-   // factor out to other numbers and not divide evenly.
-   //
-   // 3^5 = 243
-   // 3^3 = 27
-   // 243 % 27 == 0
-   // 
-   //
-   // insperation: https://leetcode.com/articles/power-of-three/
-   //
-   // recursion is the wrong solution to this problem
-   //
-   private static final int MASK = 1162261467;// 3^(floor(log3(MAX_INT))) 
-	//Pre: none - Post: returns if x is a power of 3
+
+
    public static boolean powerof3(int x)
    {
-      return x > 0 && MASK % x == 0;
+       if(x == 3){ // three is a power of three
+           return true;
+       }
+       if(x % 3 != 0){ // if x is not divisible by three,
+           return false;
+       }
+      if(x > 3){
+          return powerof3(x/3);
+      }
+      return false;
    }
-	//Pre: none - Post: returns String of x reversed
+
+
+   //Pre: none - Post: returns String of x reversed
   public static String reverse(long x){
       if(x < 10) return "" + x;
       return x % 10 + reverse(x/10);
