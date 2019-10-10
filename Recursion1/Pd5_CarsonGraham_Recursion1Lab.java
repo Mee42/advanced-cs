@@ -1,9 +1,23 @@
-import java.util.Scanner;   
+import java.util.Scanner;
+
+
+/**
+ * name: Carson graham
+ * notes:
+ *
+ * this wasn't that hard but many of these solutions are sub-optiomal because of their recursion requirement
+ *
+ * some things required some thought to come up with a solution but the actual solutions are not very hard
+ *
+ *
+ * For example, the powerof3 method, which could be done with a single call to mod, is massivly inefficent
+ */
 class RecursionLab{
+
    //Pre: c is a lower case letter - Post: all lower case letters a-char c are printed 
    public static void letters(char c){
      if(c != 'a'){
-       letters((char)((int)c - 1));
+       letters((char)((int)c - 1)); // recusion before printing for reversed
      }
      System.out.print(c);
      
@@ -35,18 +49,18 @@ class RecursionLab{
 
 
    //Pre: none - Post: returns String of x reversed
-  public static String reverse(long x){
+  public static String reverse(long x){ // hmm
       if(x < 10) return "" + x;
       return x % 10 + reverse(x/10);
    }
 
 	//Pre: x > 0 - Post: returns x in base 5
-   public static String base5(int x){
+   public static String base5(int x){ // same thing as reverse except not reversed and base 5
      if(x < 5) return "" + x;
      return base5(x/5) + x%5;
    }
 	// Pre: x > 0 - Post: returns x with commas
-   public static String printWithCommas(long x){
+   public static String printWithCommas(long x){ // some contrys use commas as the decimal point and periods as the diveder
      if(x < 1000) return "" + x;
      return printWithCommas(x / 1000) + "," + x % 1000;
    }
@@ -56,7 +70,7 @@ class RecursionLab{
    {
       Scanner scan = new Scanner (System.in);
       int choice;
-      do
+      do // this notation :(
       {
          System.out.println("\n\n1)Letters"+
                            "\n2)Twos"+
