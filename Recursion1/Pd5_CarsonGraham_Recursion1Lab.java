@@ -25,6 +25,7 @@ class RecursionLab{
 	//Pre: none - Post: returns number of times two can go into x
    public static int twos(int x)
    {
+       if(x == 0) return 0;
       if(x % 2 == 0){
         return twos(x/2) + 1;
       }
@@ -125,3 +126,123 @@ class RecursionLab{
       }while(choice != 7);
    }
 }
+
+/* test cases
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+1
+Enter a letter
+f
+abcdef
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+
+2
+Enter a number
+888
+3
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+3
+Enter a number
+5
+false
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+3
+Enter a number
+27
+true
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+
+4
+Enter a number
+1234567
+7654321
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+5
+Enter a number
+32475
+2014400
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+
+6
+Enter a number
+325
+325
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+6
+Enter a number
+3247575
+3,247,575
+
+
+1)Letters
+2)Twos
+3)Power Of 3
+4)Reverse
+5)Base 5
+6)Print With Commas
+7)Exit
+7
+
+ */
