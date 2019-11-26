@@ -5,6 +5,17 @@ import java.util.stream.Collectors;
 /**
  * Author: Carson Graham Date: 2019-11-23 This code licensed under GPLv3.
  *
+ *
+ * Answers to worksheet:
+ * 4) ConcurrentModificationException
+ * 5) for-each, unless you need to:
+ *     (A) modify the list and (B) are using a linked list or (C) are writing a generic util method. A && (B || C)  
+ * 6) ListIterator if you need the extra methods. Use Iterator by default for more generic and useful code
+ * 7) It's O(n) to find the insert location but once that is found it is O(1) to insert. With inserting many, you can use the same insert point or a fixed (1 ahead) point and only have O(n)
+ * 8) It's O(n^2) becasue the entire array needs to shift (N) for every element added (N). O(nn), O(n^2)i
+ * 9) yes. The performance loss is noticable
+ * 10) the rest of this file
+ *
  * Notes:
  * - Streams are better then Iterators.
  * - I'm going to fail this next quiz because I've touched iterators once
@@ -15,7 +26,7 @@ import java.util.stream.Collectors;
  * - Java 1.8 lost commercial support in the middle of my freshmen year
  * - Java 1.8 lost support for personal use this month (according to wikipedia/Java_version_history)
  */
-public class IteratorLab_shell {
+class IteratorLab {
   public static void main(String[] args) {
     System.out.println("Iterator Lab\n");
     int[] rawNumbers = {-9, 4, 2, 5, -10, 6, -4, 24, 20, -28};
