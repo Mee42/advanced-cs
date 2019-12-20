@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class MatchParentheses {
+class MatchParentheses {
   public static void main(String[] args) {
     check("5+7");
     check("(5+7)");
